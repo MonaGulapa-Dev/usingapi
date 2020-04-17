@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% comment %} {% block title %}Add Venue{% endblock title %} {% endcomment %}
+ 
+{% block content %}
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card card-body h-100">
+      <h5>Your IP address and Location: </h5>
+      <p>Your ip address is <strong>{{ ip }}</strong>, and you are in the <strong>{{ country }}</strong> 
+          right now. (Unless you use VPN, then you will inherit the VPN's location)</p>
+      <p> City: <strong>{{ city }} </strong></p>
+      <p> Region: <strong>{{ region }} </strong></p>
+      <p> Timezone: <strong>{{ timezone }} </strong></p>
+      <p> Currency: <strong>{{currency }} </strong></p>
+      <p> Languages Spoken: <strong>{{ languages }} </strong></p>
+      <p class='small text-secondary'>This information {{ is_cached|yesno:"was,wasn't" }} cached.</p>
+      <div class='iframe-container'>
+        <p class='text-center'><iframe width="400"
+          height="500"
+          align-text = "center"
+          frameborder="0"
+          style="border:0"
+          src="https://www.google.com/maps/embed/v1/view?center={{ latitude }},{{ longitude }}
+            &zoom=8&key={{ api_key }}"
+          allowfullscreen></iframe></p>
+      </div><p></p><p></p><p></p>
+      {% comment %} <p>Hi, this is Mona. This is a simple example of how you can make use of an API in your 
+      website / application.  There's so much we can get from consuming API and it can 
+      help speed up your web development process.  I used two related APIs, the Ip locator from ipfind
+      and the map display from Google Map. You can get the source code of this website at my  {% endcomment %}
+      <p class='text-black'>𝐻𝒾, 𝓉𝒽𝒾𝓈 𝒾𝓈 <a href='http://monagulapa.pythonanywhere.com/', 
+      target='_blank'>𝑀𝑜𝓃𝒶</a>. 𝒯𝒽𝒾𝓈 𝒾𝓈 𝒶 𝓈𝒾𝓂𝓅𝓁𝑒 𝑒𝓍𝒶𝓂𝓅𝓁𝑒 𝑜𝒻 𝒽𝑜𝓌 𝓎𝑜𝓊 𝒸𝒶𝓃 𝓂𝒶𝓀𝑒 𝓊𝓈𝑒 
+      𝑜𝒻 𝒶𝓃 𝒜𝒫𝐼 𝒾𝓃 𝓎𝑜𝓊𝓇 𝓌𝑒𝒷𝓈𝒾𝓉𝑒 / 𝒶𝓅𝓅𝓁𝒾𝒸𝒶𝓉𝒾𝑜𝓃.  𝒯𝒽𝑒𝓇𝑒'𝓈 𝓈𝑜 𝓂𝓊𝒸𝒽 𝓌𝑒 𝒸𝒶𝓃 𝑔𝑒𝓉 
+      𝒻𝓇𝑜𝓂 𝒸𝑜𝓃𝓈𝓊𝓂𝒾𝓃𝑔 𝒜𝒫𝐼 𝒶𝓃𝒹 𝒾𝓉 𝒸𝒶𝓃 𝒽𝑒𝓁𝓅 𝓈𝓅𝑒𝑒𝒹 𝓊𝓅 𝓎𝑜𝓊𝓇 𝓌𝑒𝒷 𝒹𝑒𝓋𝑒𝓁𝑜𝓅𝓂𝑒𝓃𝓉 𝓅𝓇𝑜𝒸𝑒𝓈𝓈.  
+      𝐼 𝓊𝓈𝑒𝒹 𝓉𝓌𝑜 𝓇𝑒𝓁𝒶𝓉𝑒𝒹 𝒜𝒫𝐼𝓈, 𝓉𝒽𝑒 𝐼𝓅 𝓁𝑜𝒸𝒶𝓉𝑜𝓇 𝒻𝓇𝑜𝓂 𝒾𝓅𝒻𝒾𝓃𝒹 
+      𝒶𝓃𝒹 𝓉𝒽𝑒 𝓂𝒶𝓅 𝒹𝒾𝓈𝓅𝓁𝒶𝓎 𝒻𝓇𝑜𝓂 𝒢𝑜𝑜𝑔𝓁𝑒 𝑀𝒶𝓅. 𝒴𝑜𝓊 𝒸𝒶𝓃 𝑔𝑒𝓉 𝓉𝒽𝑒 𝓈𝑜𝓊𝓇𝒸𝑒 
+      𝒸𝑜𝒹𝑒 𝑜𝒻 𝓉𝒽𝒾𝓈 𝓌𝑒𝒷𝓈𝒾𝓉𝑒 𝒶𝓉 𝓂𝓎
+       <a href='https://github.com/MonaGulapa-Dev' target='_blank'>github</a>.</p>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card card-body h-100">
+      <p>First, let's define what an <b>API</b> is. An <b>API</b>, Application Programming Interface, 
+          is like a GUI for end user, only, it is a method of communication between software components.
+          It is an application programming interface that lets your machine communicate with another 
+          machine, of course through software components.</p>
+      <p><b>REST</b> stands for Representational State Transfer. It means when a 
+          RESTful API is called, the server will transfer to the client a representation 
+          of the state of the requested resource.</p>
+      <p>A <b>RESTful API</b> -- also referred to as a <b>RESTful web service or REST API</b> -- 
+          is based on representational state transfer (REST), an architectural style 
+          and approach to communications often used in web services development, a
+          <b>client-server architecture</b>.</p>
+      <p>REST API provides a set of methods that a programmer or a developer can use 
+          via HTTP to send and receive data. HTTP requests are all we need to interact with RESTful API.  
+          Since these methods are over HTTP, any programming language can be used to employ REST API.</p>  
+      <p>In this website, I used two related APIs - 
+          <a href='https://developers.google.com/' target='_blank'>Google Map</a>
+          to represent the address with the map and <a href='https://ipfind.com/', target='_blank'>
+          IP locator</a> which automatically detects your IP address and 
+          provides related information as to your location.
+          You have to get the proper access from these API providers and read their
+          documentation for the implementation.</p>
+      <p>As for a detailed explanation about REST API, I give kudos to this youtube by 
+          Clever Techie, a simple explanation 
+          that will give you a clear understanding of the concept.  Try watching 
+          it again and again until you get the idea. Anything that is new looks
+          difficult but once you get the hang of it, you will say 
+          to yourself, "oh, so that's it. 😊".</p>
+      <div class='iframe-container'>
+          <p><iframe width="650" height="650" src="https://www.youtube.com/embed/LooL6_chvN4" 
+              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+              picture-in-picture" allowfullscreen></iframe></p>
+      </div><p></p>
+          <p>Need to speed up your web development or to have additional idea for your next project?
+              Here are some of the <a href="https://github.com/toddmotto/public-apis" 
+              target="_blank" rel="noopener">public APIs</a> you can consider.</p>
+      </div>
+  </div>
+</div>
+
+{% endblock content %}

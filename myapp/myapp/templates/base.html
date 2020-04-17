@@ -1,0 +1,55 @@
+{% load  static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous">
+    <title>{% block title %}
+            {{ page_title|default:"Consuming REST API in DJango" }}
+        {% endblock title %}</title>
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class='container'>
+        {% comment %} <div class='row'>
+            <div class='col-md-12'>
+                <div class="card card-body" style="border:none">
+                    <h1 class="bg-dark text-white text-center ">Consuming RESTful API in Django</h1>
+                    <p class="bg-dark text-white text-center">By Mona Gulapa</p>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        <h1 class="bg-dark text-white text-center pt-2 pb-2 mt-2 mb-0">Consuming RESTful API in Django</h1>
+        <p class="bg-dark text-white text-center small  mt-0 pt-2 pb-2">By Mona Gulapa</p>
+        <a href="https://github.com/MonaGulapa-Dev" target="_blank"><img style="position: absolute; 
+                top: 0; right: 0; border: 0;" 
+                src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" 
+                data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+   
+        {% block content %}
+            <p>Placeholder text in base template. Replace with page content.</p>
+        {% endblock content %}
+      
+        <div class='row'>
+            <div class='col-md-12'>
+                <br><p class='text-center text-white small bg-dark'> Copyright &copy;
+                <script type="text/JavaScript">
+                    document.write(new Date().getFullYear());                    
+                </script> 
+                by Mona Gulapa | Consuming RESTful API in Django</p>
+            </div>
+        </div>
+    </div> <!-- class container -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
