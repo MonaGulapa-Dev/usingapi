@@ -34,6 +34,7 @@ def home(request):
         'currency': currency,
         'timezone': timezone,
         'today_is': today_is,
+        'flag': geodata['flag'],
 
         # 'location': geodata['location'],
         'latitude': geodata['latitude'],
